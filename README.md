@@ -1,5 +1,7 @@
 # Thermo Shelter
 
+https://thermo-shelter-ochre.vercel.app/
+
 A polished React + Vite prototype for climate-adaptive shelter generation.
 
 ## Run in VS Code
