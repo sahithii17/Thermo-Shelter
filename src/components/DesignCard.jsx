@@ -1,0 +1,4 @@
+import { ArrowRight, Leaf, Thermometer } from "lucide-react";
+export default function DesignCard({design,selected,onSelect}){return <button className={`design-card ${selected?"selected":""}`} onClick={onSelect}>
+  <div className={`concept-thumb thumb-${design.id}`}><div className="roof-shape"></div><div className="thumb-window w1"/><div className="thumb-window w2"/><div className="thumb-door"/></div>
+  <div className="design-card-body"><div className="card-kicker">{design.form}</div><h3>{design.name}</h3><p>{design.subtitle}</p><div className="chips">{design.strategies.map(s=><span key={s}>{s}</span>)}</div><div className="card-stats"><span><Thermometer size={15}/> {design.comfort}% comfort</span><span><Leaf size={15}/> {design.sustainability}% sustainable</span></div></div><ArrowRight className="card-arrow" size={19}/></button>}

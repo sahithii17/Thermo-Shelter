@@ -1,0 +1,2 @@
+import { Box } from "lucide-react";
+export default function MaterialPanel({design}){return <section className="material-panel"><div className="section-heading"><div><span className="eyebrow">SPECIFICATION</span><h3>Recommended material palette</h3></div><Box size={25}/></div><div className="materials-grid">{design.materials.map(([k,v])=><div className="material" key={k}><small>{k}</small><b>{v}</b></div>)}</div></section>}

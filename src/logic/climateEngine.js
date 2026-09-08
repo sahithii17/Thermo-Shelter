@@ -1,0 +1,1 @@
+export { analyzeClimate } from "../data/climateData";
