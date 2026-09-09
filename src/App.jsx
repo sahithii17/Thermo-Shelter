@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 import Brief from "./pages/Brief"; import Climate from "./pages/Climate"; import Designs from "./pages/Designs"; import Simulation from "./pages/Simulation"; import Results from "./pages/Results";
+import ExistingResponse from "./pages/ExistingResponse";
 import { analyzeClimate } from "./data/climateData"; import { generateDesigns } from "./architecture/designGenerator";
+import { analyzeRemoteClimate, generateRemoteDesigns } from "./services/api";
 export default function App(){
- const [page,setPage]=useState("brief"); const [brief,setBrief]=useState({location:"Ladakh",occupants:4,budget:"Medium"});
- const [climate,setClimate]=useState(analyzeClimate("Ladakh")); const [designs,setDesigns]=useState([]);
- useEffect(()=>{const c=analyzeClimate(brief.location);setClimate(c);setDesigns(generateDesigns(c,brief))},[brief.location,brief.occupants,brief.budget]);
- const content=page==="brief"?<Brief brief={brief} setBrief={setBrief} setPage={setPage}/>:page==="climate"?<Climate climate={climate} setPage={setPage}/>:page==="designs"?<Designs designs={designs} setDesigns={setDesigns} setPage={setPage} climate={climate}/>:page==="simulation"?<Simulation designs={designs} setDesigns={setDesigns} climate={climate} setPage={setPage}/>:<Results designs={designs} climate={climate} setPage={setPage}/>;
+ const [page,setPage]=useState("brief"); const [brief,setBrief]=useState({location:"Leh, Ladakh",latitude:34.1526,longitude:77.5771,siteLength:12,siteWidth:8,occupants:4,budget:2500000,shelterType:"Residential"});
+ const [climate,setClimate]=useState(analyzeClimate("Ladakh")); const [designs,setDesigns]=useState([]); const [notice,setNotice]=useState(""); const [loading,setLoading]=useState(true);
+ useEffect(()=>{let cancelled=false; async function load(){setLoading(true);try { const remoteClimate=await analyzeRemoteClimate(brief); const remoteDesigns=await generateRemoteDesigns({...brief,climate:remoteClimate}); if(!cancelled){setClimate(remoteClimate);setDesigns(Array.isArray(remoteDesigns.designs)?remoteDesigns.designs:[]);setNotice("");} } catch(error) { if(!cancelled){setDesigns([]);setNotice("Backend unavailable. Please start the server.");} } finally {if(!cancelled)setLoading(false);} } load(); return()=>{cancelled=true}; },[brief]);
+ const emptyStage=<main className="page empty-stage"><span className="eyebrow">THERMO SHELTER</span><h1>{loading?"Preparing your shelter brief":"No design generated yet."}</h1><p>{loading?"Climate analysis and design generation are in progress.":notice||"Complete Climate Analysis first."}</p><button className="primary-btn" onClick={()=>setPage("climate")}>Return to climate</button></main>;
+ const content=page==="brief"?<Brief brief={brief} setBrief={setBrief} setPage={setPage}/>:page==="climate"?<Climate climate={climate} setPage={setPage} notice={notice}/>:page==="existing"?<ExistingResponse climate={climate} brief={brief} setPage={setPage}/>:page==="designs"?(designs.length?<Designs designs={designs} setDesigns={setDesigns} setPage={setPage} climate={climate}/>:emptyStage):page==="simulation"?(designs.length?<Simulation designs={designs} setDesigns={setDesigns} climate={climate} setPage={setPage}/>:emptyStage):page==="results"?(designs.length?<Results designs={designs} climate={climate} setPage={setPage}/>:emptyStage):emptyStage;
  return <><Nav page={page} setPage={setPage}/>{content}<footer>THERMO SHELTER <span>•</span> Climate-adaptive design prototype</footer></>
 }

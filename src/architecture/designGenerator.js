@@ -139,11 +139,30 @@ const hot = [
 ];
 
 export function generateDesigns(climate, brief={}) {
-  return (climate.mode === "hot" ? hot : cold).map(d => ({
+  const type = brief.shelterType || "Residential";
+  const programs = {
+    Residential: ["Thermal Entry", "Living + Dining", "Kitchen", "Sleeping", "Bath", "Storage"],
+    "Army / Field Accommodation": ["Protected Entry", "Sleeping Modules", "Equipment Store", "Shared Wash", "Utility", "Efficient Circulation"],
+    "Research Laboratory": ["Controlled Entry", "Laboratory Workspace", "Equipment Area", "Sample Storage", "Staff Workroom", "Service Zone"],
+    "Medical / Emergency": ["Reception", "Waiting", "Treatment", "Staff Base", "Clinical Storage", "Controlled Service"],
+    "Transit / Bus Shelter": ["Protected Waiting", "Accessible Seating", "Information Zone", "Weather Buffer", "Service Cabinet"]
+  };
+  const labels = programs[type] || programs.Residential;
+  return (climate.mode === "hot" ? hot : cold).map((d, index) => ({
     ...d,
+    name: type === "Residential" ? d.name : `${type} ${["Core", "Spine", "Court", "Modules", "Pavilion"][index]}`,
+    subtitle: `${type} program with climate-responsive planning`,
+    rooms: d.rooms.map((room, roomIndex) => [room[0], labels[roomIndex % labels.length], room[2], room[3], room[4], room[5]]),
+    shelterType: type,
+    siteLength: Number(brief.siteLength) || 12,
+    siteWidth: Number(brief.siteWidth) || 8,
+    siteArea: Number(brief.siteArea) || (Number(brief.siteLength) || 12) * (Number(brief.siteWidth) || 8),
     location: climate.location,
+    latitude: brief.latitude,
+    longitude: brief.longitude,
     occupants: brief.occupants || 4,
-    budget: brief.budget || "Medium",
+    budget: Number(brief.budget) || 2500000,
+    predictedCost: Math.round((d.area || 84) * (type === "Research Laboratory" ? 72000 : 38000 + index * 3500)),
     performance: null
   }));
 }

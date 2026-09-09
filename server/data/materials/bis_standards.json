@@ -1,0 +1,51 @@
+{
+  "source": {
+    "name": "Bureau of Indian Standards (BIS)",
+    "url": "https://standards.bis.gov.in/",
+    "type": "indian_standard_reference"
+  },
+  "records": [
+    {
+      "standard": "IS 3069:2020",
+      "title": "Glossary of Terms, Symbols and Units Relating to Thermal Insulation Materials",
+      "role": "Terminology and classification reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    },
+    {
+      "standard": "IS 3346:1980",
+      "title": "Method for the determination of thermal conductivity of thermal insulation materials (Two Slab, Guarded Hot-Plate Method)",
+      "role": "Thermal conductivity test-method reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    },
+    {
+      "standard": "IS 4671:2018",
+      "title": "Expanded polystyrene for thermal insulation purposes",
+      "role": "Material specification reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    },
+    {
+      "standard": "IS 3144:2024",
+      "title": "Mineral Wool Thermal Insulation Materials \u2014 Method of Test",
+      "role": "Material test-method reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    },
+    {
+      "standard": "IS 8183:2024",
+      "title": "Bonded mineral wool \u2014 Specification",
+      "role": "Material specification reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    },
+    {
+      "standard": "IS 9742:2024",
+      "title": "Sprayed Mineral Wool Thermal Insulation \u2014 Specification",
+      "role": "Material specification reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    },
+    {
+      "standard": "IS 19304:2025",
+      "title": "Flexible Aerogel blanket \u2014 Specification",
+      "role": "Material specification reference",
+      "sourceUrl": "https://standards.bis.gov.in/"
+    }
+  ]
+}

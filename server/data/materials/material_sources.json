@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "id": "NIST-SRD81",
+      "name": "NIST SRD 81",
+      "url": "https://srdata.nist.gov/insulation/",
+      "role": "Primary real numerical thermal-property dataset",
+      "status": "Requires relevant-record JSON export from NIST SRD 81 search"
+    },
+    {
+      "id": "ASHRAE-F25-CH26",
+      "name": "ASHRAE Handbook, Chapter 26",
+      "url": "https://handbook.ashrae.org/Handbooks/F25/SI/F25_Ch26/F25_Ch26_si.aspx",
+      "role": "Supporting reference for thermal/material properties and engineering interpretation"
+    },
+    {
+      "id": "BIS",
+      "name": "Bureau of Indian Standards",
+      "url": "https://standards.bis.gov.in/",
+      "role": "Indian standards, terminology, specifications and test-method context"
+    }
+  ]
+}

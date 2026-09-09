@@ -1,0 +1,153 @@
+{
+  "source": {
+    "name": "ASHRAE Handbook, Chapter 26 \u2014 Material Properties",
+    "url": "https://handbook.ashrae.org/Handbooks/F25/SI/F25_Ch26/F25_Ch26_si.aspx",
+    "type": "supporting_reference",
+    "note": "ASHRAE states the tabulated values are generic and should not replace manufacturer-specific data."
+  },
+  "records": [
+    {
+      "id": "ASHRAE-GLASS-FIBER-BATTS-9.8-12",
+      "material": "Glass-fiber batts",
+      "density_kg_m3": {
+        "min": 9.8,
+        "max": 12
+      },
+      "thermal_conductivity_W_mK": {
+        "min": 0.04,
+        "max": 0.043
+      },
+      "specific_heat_kJ_kgK": 0.8,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; manufacturer data cited by ASHRAE (2011)"
+    },
+    {
+      "id": "ASHRAE-ROCK-SLAG-WOOL-32-37",
+      "material": "Rock and slag wool batts",
+      "density_kg_m3": {
+        "min": 32,
+        "max": 37
+      },
+      "thermal_conductivity_W_mK": {
+        "min": 0.036,
+        "max": 0.037
+      },
+      "specific_heat_kJ_kgK": 0.8,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Kumaran (1996) / manufacturer data cited by ASHRAE"
+    },
+    {
+      "id": "ASHRAE-MINERAL-WOOL-FELTED-16-48",
+      "material": "Mineral wool, felted",
+      "density_kg_m3": {
+        "min": 16,
+        "max": 48
+      },
+      "thermal_conductivity_W_mK": 0.04,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; CIBSE (2006), NIST (2000)"
+    },
+    {
+      "id": "ASHRAE-MINERAL-WOOL-FELTED-16-130",
+      "material": "Mineral wool, felted",
+      "density_kg_m3": {
+        "min": 16,
+        "max": 130
+      },
+      "thermal_conductivity_W_mK": 0.035,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; NIST (2000)"
+    },
+    {
+      "id": "ASHRAE-STONE-WOOL-BATTS",
+      "material": "Stone wool batts",
+      "density_kg_m3": {
+        "min": 38,
+        "max": 44
+      },
+      "thermal_conductivity_W_mK": {
+        "min": 0.036,
+        "max": 0.038
+      },
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Schumacher et al. (2020)"
+    },
+    {
+      "id": "ASHRAE-AEROGEL-STANDARD",
+      "material": "Aerogel, standard",
+      "density_kg_m3": 164,
+      "thermal_conductivity_W_mK": 0.014,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Schumacher et al. (2020)"
+    },
+    {
+      "id": "ASHRAE-AEROGEL-FIRE-RATED",
+      "material": "Aerogel, fire-rated",
+      "density_kg_m3": 234,
+      "thermal_conductivity_W_mK": 0.017,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Schumacher et al. (2020)"
+    },
+    {
+      "id": "ASHRAE-CONCRETE-2400",
+      "material": "Sand and gravel or stone aggregate concrete",
+      "density_kg_m3": 2400,
+      "thermal_conductivity_W_mK": {
+        "min": 1.4,
+        "max": 2.9
+      },
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Valore (1988)"
+    },
+    {
+      "id": "ASHRAE-CONCRETE-LIGHTWEIGHT-1280",
+      "material": "Lightweight aggregate/limestone concrete",
+      "density_kg_m3": 1280,
+      "thermal_conductivity_W_mK": {
+        "min": 0.48,
+        "max": 0.59
+      },
+      "specific_heat_kJ_kgK": 0.84,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Valore (1988)"
+    },
+    {
+      "id": "ASHRAE-AERATED-CONCRETE",
+      "material": "Aerated concrete, oven-dried",
+      "density_kg_m3": {
+        "min": 430,
+        "max": 800
+      },
+      "thermal_conductivity_W_mK": 0.2,
+      "specific_heat_kJ_kgK": 0.84,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Kumaran (1996)"
+    },
+    {
+      "id": "ASHRAE-OAK",
+      "material": "Oak wood, 12% moisture content",
+      "density_kg_m3": {
+        "min": 660,
+        "max": 750
+      },
+      "thermal_conductivity_W_mK": {
+        "min": 0.16,
+        "max": 0.18
+      },
+      "specific_heat_kJ_kgK": 1.63,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Cardenas and Bible (1987) / Wilkes (1979)"
+    },
+    {
+      "id": "ASHRAE-SPRUCE",
+      "material": "Spruce wood, 12% moisture content",
+      "density_kg_m3": 400,
+      "thermal_conductivity_W_mK": 0.09,
+      "specific_heat_kJ_kgK": 1.63,
+      "sourceReference": "ASHRAE Chapter 26, Table 1; Kumaran (2002) / Wilkes (1979)"
+    },
+    {
+      "id": "ASHRAE-CLAY-BRICK",
+      "material": "Clay brick",
+      "density_kg_m3": 1980,
+      "thermal_conductivity_W_mK": 0.33,
+      "sourceReference": "ASHRAE Chapter 26, material property tables; Kumaran (2002)"
+    },
+    {
+      "id": "ASHRAE-LIMESTONE",
+      "material": "Limestone",
+      "density_kg_m3": 2500,
+      "thermal_conductivity_W_mK": 1.59,
+      "sourceReference": "ASHRAE Chapter 26, material property tables; Valore/Kumaran references"
+    }
+  ]
+}
