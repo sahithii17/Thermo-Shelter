@@ -26,14 +26,11 @@ app.use((error, _req, res, _next) => {
   console.error(error);
   res.status(error.status || 500).json({ error: error.message || "Unexpected server error" });
 });
-const server = app.listen(port, () => console.log(`Thermo Shelter API listening on http://localhost:${port}`));
+const server = app.listen(port, "0.0.0.0", () => { console.log(`Thermo Shelter API listening on port ${port}`); });
 server.on("error", (error) => {
-  if (error.code === "EADDRINUSE") {
-    console.error(`Port ${port} is already in use. Stop the existing process with: lsof -tiTCP:${port} -sTCP:LISTEN | xargs kill`);
-    console.error(`Or start Thermo Shelter on another port with: PORT=8788 npm run server`);
-    process.exitCode = 1;
-    return;
-  }
+  if (error.code === "EADDRINUSE") { console.error( `Port ${port} is already in use. Stop the existing process or use another port.` ); 
+  process.exitCode = 1; return; }
+  
   console.error("Thermo Shelter API failed to start:", error);
   process.exitCode = 1;
 });
